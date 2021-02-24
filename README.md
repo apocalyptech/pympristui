@@ -115,6 +115,6 @@ provided in [COPYING.txt](COPYING.txt).
 
 # Changelog
 
-**v1.0.0** - *(unreleased)*
+**v1.0.0** - February 24, 2021
  - Initial release
 
