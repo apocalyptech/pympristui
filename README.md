@@ -13,9 +13,9 @@ MPRIS-compatible media player.
 ![App Screenshot](https://raw.githubusercontent.com/apocalyptech/pympristui/master/screenshot.png)
 
 This app has been tested in Python 3.9+, and requires:
-* [dbus-python](https://pypi.org/project/dbus-python/) (tested on 1.2.16)
-* [mpris2](https://pypi.org/project/mpris2/) (tested on 1.0.2)
-* [urwid](https://pypi.org/project/urwid/) (tested on 2.1.2)
+ - [dbus-python](https://pypi.org/project/dbus-python/) (tested on 1.2.16)
+ - [mpris2](https://pypi.org/project/mpris2/) (tested on 1.0.2)
+ - [urwid](https://pypi.org/project/urwid/) (tested on 2.1.2)
 
 It attempts to connect to the [Audacious](https://audacious-media-player.org/)
 Media Player by default; to connect to another app instead, you'll have to specify
@@ -85,24 +85,27 @@ next track, and previous track, along with the basic information about what's
 being played currently.  It only accepts keyboard input, with the following
 keybinds:
 
-* `space` - play/pause
-* `n` - next track
-* `p` - previous track
-* `s` - stop
-* `q` - quit
+ - `space` - play/pause
+ - `n` - next track
+ - `p` - previous track
+ - `s` - stop
+ - `q` - quit
 
 Note that the "quit" key only quits the control app itself; the actual app
 playing audio will continue to run as usual.
 
 # Limitations/TODO
 
-* I'd originally intended to provide support for MPRIS2's
-  [TrackList](https://specifications.freedesktop.org/mpris-spec/latest/Track_List_Interface.html)
-  interface, but it turns out the Audacious [doesn't provide that](https://redmine.audacious-media-player.org/issues/106),
-  so I didn't look into it any further.  As such, control in the app is limited
-  to play/pause/stop, next, and prev.  There's no tracklist visibility, or ability
-  to hop around with any control other than next/prev.
-* I didn't implement in-track seeking or volume control.
+ - I'd originally intended to provide support for MPRIS2's
+   [TrackList](https://specifications.freedesktop.org/mpris-spec/latest/Track_List_Interface.html)
+   interface, but it turns out the Audacious [doesn't provide that](https://redmine.audacious-media-player.org/issues/106),
+   so I didn't look into it any further.  As such, control in the app is limited
+   to play/pause/stop, next, and prev.  There's no tracklist visibility, or ability
+   to hop around with any control other than next/prev.
+ - I didn't implement in-track seeking or volume control.
+ - The onscreen text just updates every second, so there'll often be a noticeable
+   (though brief) lag between hitting a command and having the info update onscreen.
+   The commands should be executed immediately, though.
 
 # License
 
