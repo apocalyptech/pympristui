@@ -1,0 +1,17 @@
+Things to check before releasing:
+
+    * __version__ in pympristui.py
+    * Finalized Changelog entries (update the release date!)
+    * CHECK THE TODO LIST, PRUNE IF NECESSARY
+
+To build:
+
+    git tag vx.x.x
+    git push --tags
+    python setup.py sdist
+    python setup.py bdist_wheel
+
+Then to upload:
+
+    twine upload dist/*x.x.x*
+
