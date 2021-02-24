@@ -10,6 +10,8 @@ to allow web-based control of a media player.  This app is intended to provide
 some basic controls when (for instance) SSHed in to a machine that's running
 an MPRIS-compatible media player.
 
+![App Screenshot](https://raw.githubusercontent.com/apocalyptech/pympristui/master/screenshot.png)
+
 This app has been tested in Python 3.9+, and requires:
 * [dbus-python](https://pypi.org/project/dbus-python/) (tested on 1.2.16)
 * [mpris2](https://pypi.org/project/mpris2/) (tested on 1.0.2)
@@ -80,11 +82,8 @@ Using `instance319681` or even `319681` would also match that Firefox instance.
 
 Once it's started, the app just provides the simple controls pause/play/stop,
 next track, and previous track, along with the basic information about what's
-being played currently:
-
-![App Screenshot](https://raw.githubusercontent.com/apocalyptech/pympristui/master/screenshot.png)
-
-It only accepts keyboard input, with the following keybinds:
+being played currently.  It only accepts keyboard input, with the following
+keybinds:
 
 * `space` - play/pause
 * `n` - next track
