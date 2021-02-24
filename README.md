@@ -4,11 +4,11 @@ This is a tiny little Python script to act as a TUI (Terminal User Interface)
 to an [MPRIS2](https://specifications.freedesktop.org/mpris-spec/latest/)-enabled
 media player.  MPRIS is a [D-Bus](https://dbus.freedesktop.org/doc/dbus-specification.html)-based
 interface which many Linux-based media players support, which allows external
-applications to control some aspects of media playback and control.  This is
-most often used to provide little audio applets for desktop environments, or
-to allow web-based control of a media player.  This app is intended to provide
-some basic controls when (for instance) SSHed in to a machine that's running
-an MPRIS-compatible media player.
+applications to control some aspects of media playback.  This is most often
+used to provide little audio applets for desktop environments, or to allow
+web-based control of a media player.  This app is intended to provide some
+basic controls when (for instance) SSHed in to a machine that's running an
+MPRIS-compatible media player.
 
 ![App Screenshot](https://raw.githubusercontent.com/apocalyptech/pympristui/master/screenshot.png)
 
