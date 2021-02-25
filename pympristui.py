@@ -26,7 +26,7 @@ import mpris2
 import argparse
 
 app_desc = 'TUI MPRIS2 Control'
-__version__ = '1.0.0'
+__version__ = '1.0.1b1'
 
 def decimal_to_time(secs):
     m, s = divmod(secs, 60)
@@ -121,6 +121,7 @@ class TUIPlayer(object):
                 ('value', 'white', 'black'),
                 ('keys', 'light green', 'black'),
                 ('stopped', 'light red', 'black'),
+                ('paused', 'light blue', 'black'),
                 ('playing', 'light green', 'black'),
                 (None, 'white', 'black')
                 ]
@@ -185,8 +186,9 @@ class TUIPlayer(object):
 
         if self.status == 'Stopped':
             self.status_attr.set_attr_map({None: 'stopped'})
+        elif self.status == 'Paused':
+            self.status_attr.set_attr_map({None: 'paused'})
         else:
-            # This technically matches on paused as well, but whatever.
             self.status_attr.set_attr_map({None: 'playing'})
 
         # Call back to ourselves

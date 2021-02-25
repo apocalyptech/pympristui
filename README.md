@@ -115,6 +115,9 @@ provided in [COPYING.txt](COPYING.txt).
 
 # Changelog
 
+**v1.0.1** - *(unreleased)*
+ - Use blue coloration for `Paused` notification
+
 **v1.0.0** - February 24, 2021
  - Initial release
 
