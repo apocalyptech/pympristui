@@ -43,6 +43,7 @@ class TUIPlayer(object):
     def __init__(self, player_str):
 
         global app_desc
+        global __version__
 
         player_uri = None
         player_uris = list(mpris2.get_players_uri())
@@ -65,7 +66,7 @@ class TUIPlayer(object):
         self.artist = 'n/a'
         self.album = 'n/a'
 
-        main_header = urwid.Text(app_desc, wrap='clip')
+        main_header = urwid.Text('{} v{}'.format(app_desc, __version__), wrap='clip')
         header_widget = urwid.Padding(urwid.AttrMap(main_header, 'main_header'))
 
         labels = urwid.Pile([])
