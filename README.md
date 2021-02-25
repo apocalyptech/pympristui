@@ -106,6 +106,9 @@ playing audio will continue to run as usual.
  - The onscreen text just updates every second, so there'll often be a noticeable
    (though brief) lag between hitting a command and having the info update onscreen.
    The commands should be executed immediately, though.
+ - This has only been tested against Audacious.  If other MPRIS servers behave
+   differently (like maybe not including a total track time or something), this
+   might have problems.
 
 # License
 
