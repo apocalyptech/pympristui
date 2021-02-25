@@ -197,7 +197,7 @@ class TUIPlayer(object):
 
 def main():
 
-    parser = argparse.ArgumentParser(app_desc,
+    parser = argparse.ArgumentParser(
             description='Control MPRIS2 clients using a simple TUI',
             formatter_class=argparse.ArgumentDefaultsHelpFormatter,
             )
