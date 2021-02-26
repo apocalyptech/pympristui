@@ -118,7 +118,7 @@ provided in [COPYING.txt](COPYING.txt).
 
 # Changelog
 
-**v1.0.1** - *(unreleased)*
+**v1.0.1** - February 26, 2021
  - Use blue coloration for `Paused` notification
  - Include version number in app header
  - Fix up `--help` output a bit
