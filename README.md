@@ -81,13 +81,15 @@ instance:
 Using `instance319681` or even `319681` would also match that Firefox instance.
 
 Once it's started, the app just provides the simple controls pause/play/stop,
-next track, and previous track, along with the basic information about what's
+next/previous track, and seeking, along with the basic information about what's
 being played currently.  It only accepts keyboard input, with the following
 keybinds:
 
  - `space` - play/pause
  - `n` - next track
  - `p` - previous track
+ - `<` - Seek 10 seconds back
+ - `>` - Seek 10 seconds forward
  - `s` - stop
  - `q` - quit
 
@@ -102,7 +104,7 @@ playing audio will continue to run as usual.
    so I didn't look into it any further.  As such, control in the app is limited
    to play/pause/stop, next, and prev.  There's no tracklist visibility, or ability
    to hop around with any control other than next/prev.
- - I didn't implement in-track seeking or volume control.
+ - I didn't implement volume control.
  - The onscreen text just updates every second, so there'll often be a noticeable
    (though brief) lag between hitting a command and having the info update onscreen.
    The commands should be executed immediately, though.
@@ -117,6 +119,9 @@ All code in this project is licensed under the
 provided in [COPYING.txt](COPYING.txt).
 
 # Changelog
+
+**v1.0.2** - March 3, 2021
+ - Added forward/reverse seeking
 
 **v1.0.1** - February 26, 2021
  - Use blue coloration for `Paused` notification

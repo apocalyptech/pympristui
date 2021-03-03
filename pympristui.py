@@ -26,7 +26,7 @@ import mpris2
 import argparse
 
 app_desc = 'TUI MPRIS2 Control'
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 def decimal_to_time(secs):
     m, s = divmod(secs, 60)
@@ -39,6 +39,8 @@ class TUIPlayer(object):
     KEY_PREV = 'p'
     KEY_STOP = 's'
     KEY_QUIT = 'q'
+    KEY_REV = '<'
+    KEY_FWD = '>'
 
     def __init__(self, player_str):
 
@@ -104,10 +106,10 @@ class TUIPlayer(object):
         keys = []
         for key, label in [
                 (TUIPlayer.KEY_PAUSE, 'play/pause'),
-                (TUIPlayer.KEY_NEXT, 'next'),
-                (TUIPlayer.KEY_PREV, 'previous'),
+                ('{}/{}'.format(TUIPlayer.KEY_PREV, TUIPlayer.KEY_NEXT), 'prev/next'),
                 (TUIPlayer.KEY_STOP, 'stop'),
                 (TUIPlayer.KEY_QUIT, 'quit'),
+                ('{}/{}'.format(TUIPlayer.KEY_REV, TUIPlayer.KEY_FWD), 'rev/fwd'),
                 ]:
             keys.append('[{}] {}'.format(key, label))
         main_pile.contents.append((
@@ -155,6 +157,12 @@ class TUIPlayer(object):
                 self.player.Next()
             elif key == TUIPlayer.KEY_PREV:
                 self.player.Previous()
+            elif key == TUIPlayer.KEY_REV:
+                if self.status != 'Stopped':
+                    self.player.Seek(-10*1000000)
+            elif key == TUIPlayer.KEY_FWD:
+                if self.status != 'Stopped':
+                    self.player.Seek(10*1000000)
         return []
 
     def update_status(self):
