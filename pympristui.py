@@ -26,7 +26,7 @@ import mpris2
 import argparse
 
 app_desc = 'TUI MPRIS2 Control'
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 
 def decimal_to_time(secs):
     m, s = divmod(secs, 60)
@@ -178,9 +178,18 @@ class TUIPlayer(object):
             self.length = 0
         else:
             self.cur_pos = self.player.Position/1000000
-            self.title = data['xesam:title']
-            self.artist = data['xesam:artist'][0]
-            self.album = data['xesam:album']
+            if 'xesam:title' in data:
+                self.title = data['xesam:title']
+            else:
+                self.title = 'n/a'
+            if 'xesam:artist' in data:
+                self.artist = data['xesam:artist'][0]
+            else:
+                self.artist = 'n/a'
+            if 'xesam:album' in data:
+                self.album = data['xesam:album']
+            else:
+                self.album = 'n/a'
             self.url = data['xesam:url']
             self.length = data['mpris:length']/1000000
 

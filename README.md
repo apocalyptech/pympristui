@@ -120,6 +120,9 @@ provided in [COPYING.txt](COPYING.txt).
 
 # Changelog
 
+**v1.0.3** - May 7, 2021
+ - Fixed handling of cases where some tags (such as album) aren't present
+
 **v1.0.2** - March 3, 2021
  - Added forward/reverse seeking
 
