@@ -120,6 +120,9 @@ provided in [COPYING.txt](COPYING.txt).
 
 # Changelog
 
+**v1.0.5** - June 15, 2021
+ - Bah, one more case where missing MPRIS tags would crash the app
+
 **v1.0.4** - June 9, 2021
  - Fixed a couple more cases where missing MPRIS tags would crash the app
 
