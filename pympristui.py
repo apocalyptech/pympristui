@@ -21,12 +21,14 @@
 # 
 # 3. This notice may not be removed or altered from any source distribution.
 
+import sys
+import dbus
 import urwid
 import mpris2
 import argparse
 
 app_desc = 'TUI MPRIS2 Control'
-__version__ = '1.0.5'
+__version__ = '1.0.6b1'
 
 def decimal_to_time(secs):
     m, s = divmod(secs, 60)
@@ -54,10 +56,14 @@ class TUIPlayer(object):
                 player_uri = uri
                 break
         if not player_uri:
-            print('Available Player URIs:')
-            for uri in player_uris:
-                print(' - {}'.format(uri))
-            raise RuntimeError('No dbus players matched "{}"'.format(player_str))
+            print('ERROR: No dbus players matched "{}"'.format(player_str))
+            if player_uris:
+                print('Available Player URIs:')
+                for uri in player_uris:
+                    print(' - {}'.format(uri))
+            else:
+                print('(No available player URIs found)')
+            sys.exit(1)
 
         self.player = mpris2.Player(dbus_interface_info={'dbus_uri': player_uri})
         self.status = '(unknown)'
@@ -167,7 +173,15 @@ class TUIPlayer(object):
 
     def update_status(self):
 
-        self.status = self.player.PlaybackStatus
+        try:
+            self.status = self.player.PlaybackStatus
+        except dbus.exceptions.DBusException as e:
+            try:
+                self.exit_main_loop()
+            finally:
+                print('Error communicating with DBus, exiting: {}'.format(e))
+                sys.exit(1)
+
         data = self.player.Metadata
         if 'mpris:trackid' in data:
             self.trackid = data['mpris:trackid']
