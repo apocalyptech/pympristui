@@ -123,7 +123,7 @@ provided in [COPYING.txt](COPYING.txt).
 **v1.0.6** - *unreleased*
  - More user-friendly messages when no MPRIS players can be found
  - More user-friendly message when DBus error is encountered
- - Added -V/--version argument
+ - Added `-V`/`--version` argument
 
 **v1.0.5** - June 15, 2021
  - Bah, one more case where missing MPRIS tags would crash the app
