@@ -238,7 +238,7 @@ class TUIPlayer(object):
 def main():
 
     parser = argparse.ArgumentParser(
-            description='Control MPRIS2 clients using a simple TUI',
+            description='Control MPRIS2 clients using a simple TUI (v{})'.format(__version__),
             formatter_class=argparse.ArgumentDefaultsHelpFormatter,
             )
 
@@ -248,7 +248,16 @@ def main():
             help='Player string to match on in D-BUS',
             )
 
+    parser.add_argument('-V', '--version',
+            action='store_true',
+            help='Show program version',
+            )
+
     args = parser.parse_args()
+
+    if args.version:
+        print('{} v{}'.format(app_desc, __version__))
+        sys.exit(0)
 
     p = TUIPlayer(args.player)
     p.start()
