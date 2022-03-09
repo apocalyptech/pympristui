@@ -28,7 +28,7 @@ import mpris2
 import argparse
 
 app_desc = 'TUI MPRIS2 Control'
-__version__ = '1.0.6b1'
+__version__ = '1.0.6'
 
 def decimal_to_time(secs):
     m, s = divmod(secs, 60)

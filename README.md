@@ -120,7 +120,7 @@ provided in [COPYING.txt](COPYING.txt).
 
 # Changelog
 
-**v1.0.6** - *unreleased*
+**v1.0.6** - March 9, 2022
  - More user-friendly messages when no MPRIS players can be found
  - More user-friendly message when DBus error is encountered
  - Added `-V`/`--version` argument
