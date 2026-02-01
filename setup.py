@@ -26,9 +26,9 @@ setup(
             (f'share/{app_name}', ['COPYING.txt', 'README.md', 'requirements.txt']),
             ],
         install_requires=[
-            'dbus-python ~= 1.2, >= 1.2.16',
+            'dbus-python ~= 1.4, >= 1.4.0',
             'mpris2 ~= 1.0, >= 1.0.2',
-            'urwid ~= 2.1, >= 2.1.2',
+            'urwid ~= 3.0, >= 3.0.3',
             ],
         # https://pypi.python.org/pypi?%3Aaction=list_classifiers
         classifiers=[

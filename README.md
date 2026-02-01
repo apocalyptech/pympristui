@@ -120,6 +120,11 @@ provided in [COPYING.txt](COPYING.txt).
 
 # Changelog
 
+**v1.0.7** - February 1, 2026
+ - Updated requirements to more recent versions of dbus-python and urwid.
+   The urwid update in particular is necessary for Python 3.14 compat.
+   (No actual code changes to pympristui, though.)
+
 **v1.0.6** - March 9, 2022
  - More user-friendly messages when no MPRIS players can be found
  - More user-friendly message when DBus error is encountered
